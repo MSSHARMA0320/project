@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-100 font-sans">
+
+  <div class="container mx-auto p-5">
+    <div class="max-w-md mx-auto bg-white p-5 rounded-lg shadow-lg">
+      <h1 class="text-3xl text-center font-semibold mb-5">Weather Forecast</h1>
+
+      <!-- Search and Location Section -->
+      <div class="mb-5">
+        <input id="cityInput" type="text" class="w-full p-2 rounded border border-gray-300" placeholder="Enter city name">
+        <button id="searchBtn" class="w-full mt-2 p-2 bg-blue-500 text-white rounded">Search</button>
+        <button id="getLocationBtn" class="w-full mt-2 p-2 bg-green-500 text-white rounded">Use Current Location</button>
+      </div>
+
+      <!-- Weather Data -->
+      <div id="weatherInfo" class="mb-5">
+        <p id="errorMessage" class="text-red-500 text-center hidden">Unable to fetch weather data.</p>
+        <div id="currentWeather" class="hidden">
+          <p id="locationName" class="text-xl font-semibold"></p>
+          <p id="temp" class="text-4xl font-bold"></p>
+          <p id="description" class="text-xl"></p>
+          <div class="flex justify-between mt-2">
+            <p id="humidity">Humidity: </p>
+            <p id="windSpeed">Wind Speed: </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recently Searched Cities Dropdown -->
+      <div id="recentSearches" class="mt-4 hidden">
+        <p class="text-sm font-semibold">Recent Searches:</p>
+        <select id="recentCities" class="w-full p-2 rounded border border-gray-300 mt-2">
+          <option value="">Select a city</option>
+        </select>
+      </div>
+
+      <!-- Extended Forecast Section -->
+      <div id="extendedForecast" class="mt-5 hidden">
+        <h2 class="text-2xl font-semibold text-center">5-Day Forecast</h2>
+        <div id="forecastList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+          <!-- Forecast data will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JS file -->
+  <script src="app.js"></script>
+</body>
+</html>
